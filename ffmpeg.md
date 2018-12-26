@@ -43,6 +43,19 @@
 
 `ffmpeg -i input.mov -preset slow -c:a libvorbis -b:a 128k -c:v libx264 -pix_fmt yuv420p -b:v 750k -minrate 400k -maxrate 1000k -bufsize 1500k -vf scale=360:-1 intro-360p.mp4`
 
+#### Convert all videos in folder (Windows)
+
+Convert all mp4 videos in folder using configs: [Code for Linux](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg)
+
+**if you run this command in a batch (.bat) file you need to double the % signs => %% **
+
+`for %A IN (*.mp4) DO ffmpeg -i "%A" OUTPUT_CONFIGS  "%A_new.mp4"`
+
+Example:
+
+`for %A IN (*.mp4) DO ffmpeg -i "%A" -preset slow -codec:a libvorbis -b:a 128k -codec:v libx264 -pix_fmt yuv420p -b:v 750k -minrate 400k -maxrate 1000k -bufsize 1500k -vf scale=360:-1  "%A_new.mp4"`
+
+`for %A IN (*.mp4) DO ffmpeg -i "%A" -s 320x240 -c:v libx264 -crf 23 -c:a aac  "%A_new.mp4"`
 
 
 ### Useful links
