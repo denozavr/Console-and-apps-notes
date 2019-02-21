@@ -5,6 +5,7 @@
 2. [https://www.cheatography.com/thetartankilt/cheat-sheets/ffmpeg/](https://www.cheatography.com/ffmpeg/)
 
 
+# Video
 
 ### This is sample of functions converting `mov`(any video you want actually) files to `mp4`!
 
@@ -47,7 +48,7 @@
 
 Convert all mp4 videos in folder using configs: [Code for Linux](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg)
 
-**if you run this command in a batch (.bat) file you need to double the % signs => %% **
+**if you run this command in a batch (.bat) file you need to double the % signs => %%**
 
 `for %A IN (*.mp4) DO ffmpeg -i "%A" OUTPUT_CONFIGS  "%A_new.mp4"`
 
@@ -57,7 +58,31 @@ Example:
 
 `for %A IN (*.mp4) DO ffmpeg -i "%A" -s 320x240 -c:v libx264 -crf 23 -c:a aac  "%A_new.mp4"`
 
+#### Extract Sound from video
+
+`ffmpeg -i video.mp4 -vn -ar 44100 -ac 2 -ab 320K -f mp3 sound.mp3` (Extract 320kbs sound.mp3 from video.mp4)
+
+* `-vn` -- skip video stream(layer)
+* `-ar` -- [Set the audio sampling frequency.](https://ffmpeg.org/ffmpeg-all.html#toc-Audio-Options)
+* `-ac` -- Set the number of audio channels.
+* `-ab` -- Set bitrate of audio.
+
 
 ### Useful links
 
 1. [How to resize a video to make it smaller with FFmpeg](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg)
+2. [How do I change frame size, preserving width (using ffmpeg)?](https://video.stackexchange.com/questions/9947/how-do-i-change-frame-size-preserving-width-using-ffmpeg)
+3. !!!!https://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time 
+
+
+# Images
+
+### Reduce size of images and delete metadata(EXIF)
+
+`for %A IN (*.jpg) DO ffmpeg -i "%A" "%A_new.jpg"`  
+(if use ***.bat** file don't forget to use **%%** like) : `for %%A IN (*.jpg) DO ffmpeg -i "%%A" "_%%A"`
+
+
+### Useful links
+
+1. https://stackoverflow.com/questions/28806816/use-ffmpeg-to-resize-image Delete Exif(metadata from images)
