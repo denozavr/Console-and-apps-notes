@@ -58,6 +58,13 @@ Example:
 
 `for %A IN (*.mp4) DO ffmpeg -i "%A" -s 320x240 -c:v libx264 -crf 23 -c:a aac  "%A_new.mp4"`
 
+#### Extract images from video
+
+`ffmpeg -i video.mp4 -q:v 1 output/img_%03d.jpg`
+
+Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use the best possible quality for exported pictures. Files will have name like **img_001.jpg**.
+
+
 #### Extract Sound from video
 
 `ffmpeg -i video.mp4 -vn -ar 44100 -ac 2 -ab 320K -f mp3 sound.mp3` (Extract 320kbs sound.mp3 from video.mp4)
@@ -77,7 +84,7 @@ Example:
 
 # Images
 
-### Reduce size of images and delete metadata(EXIF)
+### Reduce size of images and delete metadata(EXIF) for all JPG in the current folder
 
 `for %A IN (*.jpg) DO ffmpeg -i "%A" "%A_new.jpg"`  
 (if use ***.bat** file don't forget to use **%%** like) : `for %%A IN (*.jpg) DO ffmpeg -i "%%A" "_%%A"`
