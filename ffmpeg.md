@@ -60,9 +60,10 @@ Example:
 
 #### Extract images from video
 
-`ffmpeg -i video.mp4 -q:v 1 output/img_%03d.jpg`
+`ffmpeg -i video.mp4 -q:v 1 output/img_%05d.jpg`
 
-Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use the best possible quality for exported pictures. Files will have name like **img_001.jpg**.
+Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use the best possible quality for exported pictures. Files will have name like **img_00001.jpg**.
+**output** folder should exist before implementin command, otherwise you will got an error.
 
 
 #### Extract Sound from video
