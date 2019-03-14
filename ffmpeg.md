@@ -75,6 +75,11 @@ Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use t
 * `-ac` -- Set the number of audio channels.
 * `-ab` -- Set bitrate of audio.
 
+#### Merge pictures and sound to video again
+
+`ffmpeg -i img_%05d.jpg -i sound.mp3 -vcodec libx264 -preset veryslow -crf 10 -r 23.976 new_video.mp4`
+
+Recreate our video based on exported images and sound, <span style="background-color:yellow">Be careful **-r** (frames) should be the same as on original video, otherwise sound and pictures would not match (out of sync)</span>.
 
 ### Useful links
 
