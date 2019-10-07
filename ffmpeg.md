@@ -21,7 +21,7 @@
 | `-s` | hd480, 640x360,720x480  | Size(widthxheight), `-vf scale` is more flexible |
 | `-vf scale` | X:-1 | [Resize Video (X is width)](https://trac.ffmpeg.org/wiki/Scaling) |
 | `-pix_fmt` | yuv420p, yuyv422, rgb24, gray | [Set pixel format](https://ffmpeg.org/ffmpeg.html#toc-Advanced-Video-options) |
-| `-crf` | From 0 (best) to 53 (worst) | [Constant Rate Factor (CRF) for better quality default 23](https://trac.ffmpeg.org/wiki/Encode/H.264#crf) |
+| `-crf` | From 0 (best) to 53 (worst) | [Constant Rate Factor (CRF) for better quality default 23, custom advised values are from 15 to 29](https://trac.ffmpeg.org/wiki/Encode/H.264#crf) |
 
 ###### MP4 - 1080p
 
