@@ -37,7 +37,7 @@
 
 #### MP4 - 480p (alternative)
 
-`ffmpeg -i input.mp4 -s hd480 -c:v libx264 -crf 23 -c:a aac output_480.mp4` (850x480)
+`ffmpeg -i input.mp4 -s hd480 -c:v libx264 -crf 23 -c:a aac output_480.mp4` (850x480) <br/>
 `ffmpeg -i input.mp4 -s 480x320 -c:v libx264 -crf 23 -c:a aac output_480.mp4`
 
 ###### MP4 - 360p
