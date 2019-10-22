@@ -66,7 +66,8 @@ Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use t
 **output** folder should exist before implementin command, otherwise you will got an error.
 
 
-#### Extract Sound from video
+#### Extract Sound from video and merge again
+##### Extract Sound from video
 
 `ffmpeg -i video.mp4 -vn -ar 44100 -ac 2 -ab 320K -f mp3 sound.mp3` (Extract 320kbs sound.mp3 from video.mp4)
 
@@ -75,7 +76,7 @@ Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use t
 * `-ac` -- Set the number of audio channels.
 * `-ab` -- Set bitrate of audio.
 
-#### Merge pictures and sound to video again
+##### Merge pictures and sound to video again
 
 `ffmpeg -i img_%05d.jpg -i sound.mp3 -vcodec libx264 -preset veryslow -crf 10 -r 23.976 new_video.mp4`
 
