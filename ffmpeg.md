@@ -82,6 +82,12 @@ Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use t
 
 Recreate our video based on exported images and sound, <span style="background-color:yellow">Be careful **-r** (frames) should be the same as on original video, otherwise sound and pictures would not match (out of sync)</span>.
 
+#### Rotate video
+
+[Rotate vertical video to 90 degrees](https://stackoverflow.com/questions/3937387/rotating-videos-with-ffmpeg) (and keep metadata), *will optimize and reduce output video size*, for keeping the better quality use **`-crf` flag like `-crf 22`**
+
+`ffmpeg -i video.mp4 -map_metadata 0 -vf "transpose=2"  output.mp4`
+
 ### Useful links
 
 1. [How to resize a video to make it smaller with FFmpeg](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg)
