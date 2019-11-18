@@ -88,6 +88,9 @@ Recreate our video based on exported images and sound, <span style="background-c
 
 `ffmpeg -i video.mp4 -map_metadata 0 -vf "transpose=2"  output.mp4`
 
+[also pure metadata way can be used](https://stackoverflow.com/a/31683689/2771704) (**not supported by all devices**)
+`ffmpeg -i input.mp4 -map_metadata 0 -metadata:s:v rotate="90" -codec copy output.mp4`
+
 ### Useful links
 
 1. [How to resize a video to make it smaller with FFmpeg](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg)
