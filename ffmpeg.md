@@ -3,6 +3,7 @@
 ### Cheatsheets links (test and select useful commands)
 1. [https://devhints.io/ffmpeg](https://devhints.io/ffmpeg)
 2. [https://www.cheatography.com/thetartankilt/cheat-sheets/ffmpeg/](https://www.cheatography.com/ffmpeg/)
+3. [20+ FFmpeg Commands For Beginners (2019-05)](https://www.ostechnix.com/20-ffmpeg-commands-beginners/)
 
 
 # Video
