@@ -7,7 +7,9 @@ REPLACE (**in bat file use `%%` instead of `%`**)
 
 ### *Optimal resize and quality*
 
-`mogrify  -resize 75% -quality 90% *.jpg`
+`mogrify  -resize 75% -quality 90% -taint *.jpg`
+
+* `-taint` -- [keep metadata(EXIFI) during converting](https://imagemagick.org/script/command-line-options.php)
 
 ### Combine several images
 
