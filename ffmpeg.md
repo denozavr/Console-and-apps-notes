@@ -5,6 +5,10 @@
 2. [https://www.cheatography.com/thetartankilt/cheat-sheets/ffmpeg/](https://www.cheatography.com/ffmpeg/)
 3. [20+ FFmpeg Commands For Beginners (2019-05)](https://www.ostechnix.com/20-ffmpeg-commands-beginners/)
 
+### Issues
+
+1. Cannot play portrait video on my old LG TV (bought in 2013) after converting video using **ffmpeg** ([nothing worked from rotate post](https://stackoverflow.com/questions/3937387/rotating-videos-with-ffmpeg)), funny thing that original videos from phone (~100Mb for 1 minute) worked fine, but even if use Google Photos converting and download and try to play, same error on TV. _The only workaround that worked to play converted portrait videos on TV was using **force_original_aspect_ratio** from [this post](https://superuser.com/questions/547296/resizing-videos-with-ffmpeg-avconv-to-fit-into-static-sized-player)_
+
 
 # Video
 
