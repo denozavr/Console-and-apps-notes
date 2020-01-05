@@ -11,6 +11,13 @@ REPLACE (**in bat file use `%%` instead of `%`**)
 
 * `-taint` -- [keep metadata(EXIFI) during converting](https://imagemagick.org/script/command-line-options.php)
 
+### Change size (with center)
+
+`mogrify -resize x150 -background white -gravity center -extent 150x150 *.jpg`  -- replace image with changing its size to 150px(1 side) and if there is space fill it with **white** color and center
+
+If cut image wrong try:
+`mogrify -resize 150x150 -background white -gravity center -extent 150x150 *.jpg`
+
 ### Combine several images
 
 #### In grid ([montage command](http://www.imagemagick.org/Usage/montage/))
