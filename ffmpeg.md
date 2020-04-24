@@ -96,6 +96,22 @@ Recreate our video based on exported images and sound, <span style="background-c
 [also pure metadata way can be used](https://stackoverflow.com/a/31683689/2771704) (**not supported by all devices**)
 `ffmpeg -i input.mp4 -map_metadata 0 -metadata:s:v rotate="90" -codec copy output.mp4`
 
+#### Concatenate/Merge videos
+**With text file(list.txt) approach there are NO any pauses between concatenated videos using instructions below**
+Like approach with text files ([some more info here + notes how to concat all files in folder](https://stackoverflow.com/a/41387530))
+
+!!`creation_time` metadata works for **.mp4** files ([other type of files may need another metadata tag](https://stackoverflow.com/questions/40354172/change-avi-creation-date-with-ffmpeg))
+
+`ffmpeg -f concat -i list.txt -metadata creation_time="2017-05-13 14:30:37" -c copy output.mp4`
+
+* `-metadata creation_time="2017-05-13 14:30:37"` -- set **Media created** for new **.mp4** files (otherwise **Media created** will be empty )
+* `-i list.txt` -- contains list of filenames which could be concatenated with the next commands
+  ```:: Create File List
+  echo file file1.mp4 >  list.txt
+  echo file file2.mp4 >> list.txt
+  echo file file3.mp4 >> list.txt
+  ```
+
 ### Useful links
 
 1. [How to resize a video to make it smaller with FFmpeg](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg)
