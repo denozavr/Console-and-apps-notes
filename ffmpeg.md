@@ -63,6 +63,18 @@ Example:
 
 `for %A IN (*.mp4) DO ffmpeg -i "%A" -s 320x240 -c:v libx264 -crf 23 -c:a aac  "%A_new.mp4"`
 
+### Convert video and keep the same quality (i.e. from *.mov to *.mp4 )
+
+**[Link](https://stackoverflow.com/questions/25569180/ffmpeg-convert-without-loss-quality)**
+
+According to link above we have several options (**option 2 seems to be the best**):
+
+1) use `-crf` see the table on above (best values between **18 and 29**)
+2) keep all codecs using `-vcodec copy -acodec copy -scodec mov_text` , where `-scodec` is [codec for subtitles (Section 5.9)](https://ffmpeg.org/ffmpeg.html#toc-Subtitle-options) <br><br>
+  ```for %a in ("*.mov") do ffmpeg.exe -i "%a" -vcodec copy -acodec copy -scodec mov_text "%~na.mp4"``` will convert all files in folder from **MOV** to **MP4** and keep all codecs and the initial name
+3) use `-qscale 0` OR `-qscale:v` for OLD codecs. It is ignored by libx264 and libx265 which use -crf instead.
+
+
 #### Extract images from video
 
 `ffmpeg -i video.mp4 -q:v 1 output/img_%05d.jpg`
