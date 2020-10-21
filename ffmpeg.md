@@ -27,6 +27,8 @@
 | `-vf scale` | X:-1 | [Resize Video (X is width)](https://trac.ffmpeg.org/wiki/Scaling) |
 | `-pix_fmt` | yuv420p, yuyv422, rgb24, gray | [Set pixel format](https://ffmpeg.org/ffmpeg.html#toc-Advanced-Video-options) |
 | `-crf` | From 0 (best) to 53 (worst) | [Constant Rate Factor (CRF) for better quality default 23, custom advised values are from 15 to 29](https://trac.ffmpeg.org/wiki/Encode/H.264#crf) |
+| ----- | ------- | ----------- |
+| `-map_metadata` | 0 (most often, [more info in Docs](https://ffmpeg.org/ffmpeg.html)) | `-map_metadata 0` keeps all info from **input** file, **works only for default meta**, for custom meta use [-movflags](https://video.stackexchange.com/a/26076) |
 
 ###### MP4 - 1080p
 
