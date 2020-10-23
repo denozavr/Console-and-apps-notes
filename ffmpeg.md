@@ -55,7 +55,7 @@
 
 Convert all mp4 videos in folder using configs: [Code for Linux](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg)
 
-<span style="background-color:yellow">**if you run this command in a batch (.bat) file you need to double the % signs => %%**</span>
+<mark style="background-color:orange">**if you run this command in a batch (.bat) file you need to double the % signs => %%**</mark>
 
 `for %A IN (*.mp4) DO ffmpeg -i "%A" OUTPUT_CONFIGS  "%A_new.mp4"`
 
@@ -82,7 +82,7 @@ According to link above we have several options (**option 2 seems to be the best
 `ffmpeg -i video.mp4 -q:v 1 output/img_%05d.jpg`
 
 Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use the best possible quality for exported pictures. Files will have name like **img_00001.jpg**.
-<span style="background-color: yellow">**output** folder should exist before implementin command, otherwise you will got an error.</span>
+<mark style="background-color: yellow">**output** folder should exist before implementin command, otherwise you will got an error.</mark>
 
 Additional example(for several videos and **KEEP meta**)
 
@@ -103,7 +103,7 @@ Additional example(for several videos and **KEEP meta**)
 
 `ffmpeg -i img_%05d.jpg -i sound.mp3 -vcodec libx264 -preset veryslow -crf 10 -r 23.976 new_video.mp4`
 
-Recreate our video based on exported images and sound, <span style="background-color:yellow">Be careful **-r** (frames) should be the same as on original video, otherwise sound and pictures would not match (out of sync)</span>.
+Recreate our video based on exported images and sound, <mark style="background-color:yellow">Be careful **-r** (frames) should be the same as on original video, otherwise sound and pictures would not match (out of sync)</mark>.
 
 #### Rotate video
 
