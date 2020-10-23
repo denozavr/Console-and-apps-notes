@@ -1,4 +1,5 @@
 ### [Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
+#### [Since GITHUB doesn't support text coloring, here some Unicodes](https://stackoverflow.com/a/36287428/2771704) + [MORE UNICODES ~ 800](https://apps.timwhitlock.info/emoji/tables/unicode)
 
 ### Cheatsheets links (test and select useful commands)
 1. [https://devhints.io/ffmpeg](https://devhints.io/ffmpeg)
@@ -59,7 +60,7 @@
 
 Convert all mp4 videos in folder using configs: [Code for Linux](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg)
 
-<mark style="background-color:orange">**if you run this command in a batch (.bat) file you need to double the % signs => %%**</mark>
+&#x1F534;<mark style="background-color:orange">**if you run this command in a batch (.bat) file you need to double the % signs => %%**</mark> &#x1F534;
 
 `for %A IN (*.mp4) DO ffmpeg -i "%A" OUTPUT_CONFIGS  "%A_new.mp4"`
 
