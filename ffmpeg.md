@@ -51,6 +51,10 @@
 
 `ffmpeg -i input.mov -preset slow -c:a libvorbis -b:a 128k -c:v libx264 -pix_fmt yuv420p -b:v 750k -minrate 400k -maxrate 1000k -bufsize 1500k -vf scale=360:-1 intro-360p.mp4`
 
+### Simplest way to convert video with metadata
+
+`ffmpeg -i input.mp4 -map_metadata 0 -crf 22 output.mp4`
+
 #### Convert all videos in folder (Windows)
 
 Convert all mp4 videos in folder using configs: [Code for Linux](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg)
@@ -98,6 +102,11 @@ Additional example(for several videos and **KEEP meta**)
 * `-ar` -- [Set the audio sampling frequency.](https://ffmpeg.org/ffmpeg-all.html#toc-Audio-Options)
 * `-ac` -- Set the number of audio channels.
 * `-ab` -- Set bitrate of audio.
+* `-f` -- file format ([check Docs](https://ffmpeg.org/ffmpeg.html#toc-Main-options))
+
+Much simpler way to extract video([from here](https://superuser.com/questions/332347/how-can-i-convert-mp4-video-to-mp3-audio-with-ffmpeg)):
+
+`ffmpeg -i filename.mp4 filename.mp3`
 
 ##### Merge pictures and sound to video again
 
