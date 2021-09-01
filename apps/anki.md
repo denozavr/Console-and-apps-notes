@@ -35,6 +35,11 @@
 ```css
 /* put these styles on the very bottom of ANKI HTML */
 <style>
+   code {
+    color: #434343;
+    background: #f8f8f8;
+  }
+    
   .codeblock {
     display: inline-block;
     padding: 15px;
