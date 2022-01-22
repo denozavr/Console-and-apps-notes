@@ -30,6 +30,8 @@
 | `-crf` | From 0 (best) to 53 (worst) | [Constant Rate Factor (CRF) for better quality default 23, custom advised values are from 15 to 29](https://trac.ffmpeg.org/wiki/Encode/H.264#crf) |
 | ----- | ------- | ----------- |
 | `-map_metadata` | 0 (most often, [more info in Docs](https://ffmpeg.org/ffmpeg.html)) | `-map_metadata 0` keeps all info from **input** file, **works only for default meta**, for custom meta use [-movflags](https://video.stackexchange.com/a/26076) |
+| ----- | ------- | ----------- |
+| `-i` | ?? | means input file path (or URL) [see this link from docs](https://ffmpeg.org/ffmpeg.html#toc-Main-options) |
 
 ###### MP4 - 1080p
 
@@ -108,6 +110,12 @@ Additional example(for several videos and **KEEP meta**)
 Much simpler way to extract video([from here](https://superuser.com/questions/332347/how-can-i-convert-mp4-video-to-mp3-audio-with-ffmpeg)):
 
 `ffmpeg -i filename.mp4 filename.mp3`
+
+#### Merge video and audio
+
+ [(2011) see link](https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg)
+
+`ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4`
 
 ##### Merge pictures and sound to video again
 
