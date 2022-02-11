@@ -148,6 +148,17 @@ Like approach with text files ([some more info here + notes how to concat all fi
   echo file file3.mp4 >> list.txt
   ```
 
+#### Slow down the video
+
+* `ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=2.0*PTS[v];[0:a]atempo=0.5[a]" -map "[v]" -map "[a]" output2.mp4` -- slow down video (`setpts=2.0*PTS[v]`) and audio (`atempo=0.5`) 2 times 
+* `ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=3.0*PTS[v];[0:a]atempo=0.6,atempo=0.55[a]" -map "[v]" -map "[a]" output3.mp4` -- slow down video and audio(`atempo=0.6,atempo=0.55` - the result of multiplication should be 0.33) 3 times
+* Useful links:
+  - [(OFFICIAL DOCS) Speeding up/slowing down video](https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video)
+    - `setpts` -- The filter works by changing the presentation timestamp (PTS) of each video frame. For example, if there are two succesive frames shown at timestamps 1 and 2, and you want to speed up the video, those timestamps need to become 0.5 and 1, respectively. Thus, we have to multiply them by 0.5.
+    - The atempo filter is limited to using values between 0.5 and 2.0 (so it can slow it down to no less than half the original speed, and speed up to no more than double the input). If you need to, you can get around this limitation by stringing multiple atempo filters together. The following with quadruple the audio speed: `ffmpeg -i input.mkv -filter:a "atempo=2.0,atempo=2.0" -vn output.mkv`
+  - [(2011) Change the frame rate of an MP4 video with ffmpeg](https://superuser.com/questions/320045/change-the-frame-rate-of-an-mp4-video-with-ffmpeg)
+  - [(2017) Speed up video x1.5 but keep all frames](https://superuser.com/questions/1247462/speed-up-video-x1-5-but-keep-all-frames)
+
 ### Useful links
 
 1. [How to resize a video to make it smaller with FFmpeg](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg)
