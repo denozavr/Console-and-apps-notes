@@ -1,7 +1,9 @@
 ### [Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
+
 #### [Since GITHUB doesn't support text coloring, here some Unicodes](https://stackoverflow.com/a/36287428/2771704) + [MORE UNICODES ~ 800](https://apps.timwhitlock.info/emoji/tables/unicode)
 
 ### Cheatsheets links (test and select useful commands)
+
 1. [https://devhints.io/ffmpeg](https://devhints.io/ffmpeg)
 2. [https://www.cheatography.com/thetartankilt/cheat-sheets/ffmpeg/](https://www.cheatography.com/ffmpeg/)
 3. [20+ FFmpeg Commands For Beginners (2019-05)](https://www.ostechnix.com/20-ffmpeg-commands-beginners/)
@@ -10,28 +12,27 @@
 
 1. Cannot play portrait video on my old LG TV (bought in 2013) after converting video using **ffmpeg** ([nothing worked from rotate post](https://stackoverflow.com/questions/3937387/rotating-videos-with-ffmpeg)), funny thing that original videos from phone (~100Mb for 1 minute) worked fine, but even if use Google Photos converting and download and try to play, same error on TV. _The only workaround that worked to play converted portrait videos on TV was using **force_original_aspect_ratio** from [this post](https://superuser.com/questions/547296/resizing-videos-with-ffmpeg-avconv-to-fit-into-static-sized-player)_
 
-
 # Video
 
 ### This is sample of functions converting `mov`(any video you want actually) files to `mp4`!
 
 > Command Flags
 
-| Flag | Options | Description |
-| ---- | ------- | ----------- |
-| `-codec:a (= -c:a)` | libfaac, aac, libvorbis, [copy](https://stackoverflow.com/questions/38379412/what-does-copy-do-in-a-ffmpeg-command-line) | Audio Codec |
-| `-quality` | best, good, realtime | Video Quality |
-| `-b:a` | 128k, 192k, 256k, 320k | Audio Bitrate |
-| `-codec:v (= -c:v)` | mpeg4, libx264, libvpx-vp9, [copy](https://stackoverflow.com/questions/38379412/what-does-copy-do-in-a-ffmpeg-command-line) | Video Codec |
-| `-b:v` | 1000, 2500, 5000, 8000 | Video Bitrate |
-| `-s` | hd480, 640x360,720x480  | Size(widthxheight), `-vf scale` is more flexible |
-| `-vf scale` | X:-1 | [Resize Video (X is width)](https://trac.ffmpeg.org/wiki/Scaling) |
-| `-pix_fmt` | yuv420p, yuyv422, rgb24, gray | [Set pixel format](https://ffmpeg.org/ffmpeg.html#toc-Advanced-Video-options) |
-| `-crf` | From 0 (best) to 53 (worst) | [Constant Rate Factor (CRF) for better quality default 23, custom advised values are from 15 to 29](https://trac.ffmpeg.org/wiki/Encode/H.264#crf) |
-| ----- | ------- | ----------- |
-| `-map_metadata` | 0 (most often, [more info in Docs](https://ffmpeg.org/ffmpeg.html)) | `-map_metadata 0` keeps all info from **input** file, **works only for default meta**, for custom meta use [-movflags](https://video.stackexchange.com/a/26076) |
-| ----- | ------- | ----------- |
-| `-i` | ?? | means input file path (or URL) [see this link from docs](https://ffmpeg.org/ffmpeg.html#toc-Main-options) |
+| Flag                | Options                                                                                                                     | Description                                                                                                                                                     |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-codec:a (= -c:a)` | libfaac, aac, libvorbis, [copy](https://stackoverflow.com/questions/38379412/what-does-copy-do-in-a-ffmpeg-command-line)    | Audio Codec                                                                                                                                                     |
+| `-quality`          | best, good, realtime                                                                                                        | Video Quality                                                                                                                                                   |
+| `-b:a`              | 128k, 192k, 256k, 320k                                                                                                      | Audio Bitrate                                                                                                                                                   |
+| `-codec:v (= -c:v)` | mpeg4, libx264, libvpx-vp9, [copy](https://stackoverflow.com/questions/38379412/what-does-copy-do-in-a-ffmpeg-command-line) | Video Codec                                                                                                                                                     |
+| `-b:v`              | 1000, 2500, 5000, 8000                                                                                                      | Video Bitrate                                                                                                                                                   |
+| `-s`                | hd480, 640x360,720x480                                                                                                      | Size(widthxheight), `-vf scale` is more flexible                                                                                                                |
+| `-vf scale`         | X:-1                                                                                                                        | [Resize Video (X is width)](https://trac.ffmpeg.org/wiki/Scaling)                                                                                               |
+| `-pix_fmt`          | yuv420p, yuyv422, rgb24, gray                                                                                               | [Set pixel format](https://ffmpeg.org/ffmpeg.html#toc-Advanced-Video-options)                                                                                   |
+| `-crf`              | From 0 (best) to 53 (worst)                                                                                                 | [Constant Rate Factor (CRF) for better quality default 23, custom advised values are from 15 to 29](https://trac.ffmpeg.org/wiki/Encode/H.264#crf)              |
+| -----               | -------                                                                                                                     | -----------                                                                                                                                                     |
+| `-map_metadata`     | 0 (most often, [more info in Docs](https://ffmpeg.org/ffmpeg.html))                                                         | `-map_metadata 0` keeps all info from **input** file, **works only for default meta**, for custom meta use [-movflags](https://video.stackexchange.com/a/26076) |
+| -----               | -------                                                                                                                     | -----------                                                                                                                                                     |
+| `-i`                | ??                                                                                                                          | means input file path (or URL) [see this link from docs](https://ffmpeg.org/ffmpeg.html#toc-Main-options)                                                       |
 
 ###### MP4 - 1080p
 
@@ -72,40 +73,39 @@ Example:
 
 `for %A IN (*.mp4) DO ffmpeg -i "%A" -s 320x240 -c:v libx264 -crf 23 -c:a aac  "%A_new.mp4"`
 
-### Convert video and keep the same quality (i.e. from *.mov to *.mp4 )
+### Convert video and keep the same quality (i.e. from _.mov to _.mp4 )
 
 **[Link](https://stackoverflow.com/questions/25569180/ffmpeg-convert-without-loss-quality)**
 
 According to link above we have several options (**option 2 seems to be the best**):
 
-1) use `-crf` see the table on above (best values between **18 and 29**)
-2) keep all codecs using `-vcodec copy -acodec copy -scodec mov_text` , where `-scodec` is [codec for subtitles (Section 5.9)](https://ffmpeg.org/ffmpeg.html#toc-Subtitle-options) <br><br>
-  ```for %a in ("*.mov") do ffmpeg.exe -i "%a" -vcodec copy -acodec copy -scodec mov_text "%~na.mp4"``` will convert all files in folder from **MOV** to **MP4** and keep all codecs and the initial name
-3) use `-qscale 0` OR `-qscale:v` for OLD codecs. It is ignored by libx264 and libx265 which use -crf instead.
-
+1. use `-crf` see the table on above (best values between **18 and 29**)
+2. keep all codecs using `-vcodec copy -acodec copy -scodec mov_text` , where `-scodec` is [codec for subtitles (Section 5.9)](https://ffmpeg.org/ffmpeg.html#toc-Subtitle-options) <br><br>
+   `for %a in ("*.mov") do ffmpeg.exe -i "%a" -vcodec copy -acodec copy -scodec mov_text "%~na.mp4"` will convert all files in folder from **MOV** to **MP4** and keep all codecs and the initial name
+3. use `-qscale 0` OR `-qscale:v` for OLD codecs. It is ignored by libx264 and libx265 which use -crf instead.
 
 #### Extract images from video
 
 `ffmpeg -i video.mp4 -q:v 1 output/img_%05d.jpg`
 
-Extract from **video.mp4** videofile to *output* folder, `-q:v 1` means to use the best possible quality for exported pictures. Files will have name like **img_00001.jpg**.
+Extract from **video.mp4** videofile to _output_ folder, `-q:v 1` means to use the best possible quality for exported pictures. Files will have name like **img_00001.jpg**.
 <mark style="background-color: yellow">**output** folder should exist before implementin command, otherwise you will got an error.</mark>
 
 Additional example(for several videos and **KEEP meta**)
 
 `for %A IN (*.mp4) DO ffmpeg -i "%A" -map_metadata 0 -crf 22 out/"%A"`
 
-
 #### Extract Sound from video and merge again
+
 ##### Extract Sound from video
 
 `ffmpeg -i video.mp4 -vn -ar 44100 -ac 2 -ab 320K -f mp3 sound.mp3` (Extract 320kbs sound.mp3 from video.mp4)
 
-* `-vn` -- skip video stream(layer)
-* `-ar` -- [Set the audio sampling frequency.](https://ffmpeg.org/ffmpeg-all.html#toc-Audio-Options)
-* `-ac` -- Set the number of audio channels.
-* `-ab` -- Set bitrate of audio.
-* `-f` -- file format ([check Docs](https://ffmpeg.org/ffmpeg.html#toc-Main-options))
+- `-vn` -- skip video stream(layer)
+- `-ar` -- [Set the audio sampling frequency.](https://ffmpeg.org/ffmpeg-all.html#toc-Audio-Options)
+- `-ac` -- Set the number of audio channels.
+- `-ab` -- Set bitrate of audio.
+- `-f` -- file format ([check Docs](https://ffmpeg.org/ffmpeg.html#toc-Main-options))
 
 Much simpler way to extract video([from here](https://superuser.com/questions/332347/how-can-i-convert-mp4-video-to-mp3-audio-with-ffmpeg)):
 
@@ -113,7 +113,7 @@ Much simpler way to extract video([from here](https://superuser.com/questions/33
 
 #### Merge video and audio
 
- [(2011) see link](https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg)
+[(2011) see link](https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg)
 
 `ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4`
 
@@ -125,7 +125,7 @@ Recreate our video based on exported images and sound, <mark style="background-c
 
 #### Rotate video
 
-[Rotate vertical video to 90 degrees](https://stackoverflow.com/questions/3937387/rotating-videos-with-ffmpeg) (and keep metadata), *will optimize and reduce output video size*, for keeping the better quality use **`-crf` flag like `-crf 22`**
+[Rotate vertical video to 90 degrees](https://stackoverflow.com/questions/3937387/rotating-videos-with-ffmpeg) (and keep metadata), _will optimize and reduce output video size_, for keeping the better quality use **`-crf` flag like `-crf 22`**
 
 `ffmpeg -i video.mp4 -map_metadata 0 -vf "transpose=2"  output.mp4`
 
@@ -133,6 +133,7 @@ Recreate our video based on exported images and sound, <mark style="background-c
 `ffmpeg -i input.mp4 -map_metadata 0 -metadata:s:v rotate="90" -codec copy output.mp4`
 
 #### Concatenate/Merge videos
+
 **With text file(list.txt) approach there are NO any pauses between concatenated videos using instructions below**
 Like approach with text files ([some more info here + notes how to concat all files in folder](https://stackoverflow.com/a/41387530))
 
@@ -140,8 +141,8 @@ Like approach with text files ([some more info here + notes how to concat all fi
 
 `ffmpeg -f concat -i list.txt -metadata creation_time="2017-05-13 14:30:37" -c copy output.mp4`
 
-* `-metadata creation_time="2017-05-13 14:30:37"` -- set **Media created** for new **.mp4** files (otherwise **Media created** will be empty )
-* `-i list.txt` -- contains list of filenames which could be concatenated with the next commands
+- `-metadata creation_time="2017-05-13 14:30:37"` -- set **Media created** for new **.mp4** files (otherwise **Media created** will be empty )
+- `-i list.txt` -- contains list of filenames which could be concatenated with the next commands
   ```:: Create File List
   echo file file1.mp4 >  list.txt
   echo file file2.mp4 >> list.txt
@@ -150,14 +151,25 @@ Like approach with text files ([some more info here + notes how to concat all fi
 
 #### Slow down the video
 
-* `ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=2.0*PTS[v];[0:a]atempo=0.5[a]" -map "[v]" -map "[a]" output2.mp4` -- slow down video (`setpts=2.0*PTS[v]`) and audio (`atempo=0.5`) 2 times 
-* `ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=3.0*PTS[v];[0:a]atempo=0.6,atempo=0.55[a]" -map "[v]" -map "[a]" output3.mp4` -- slow down video and audio(`atempo=0.6,atempo=0.55` - the result of multiplication should be 0.33) 3 times
-* Useful links:
+- `ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=2.0*PTS[v];[0:a]atempo=0.5[a]" -map "[v]" -map "[a]" output2.mp4` -- slow down video (`setpts=2.0*PTS[v]`) and audio (`atempo=0.5`) 2 times
+- `ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=3.0*PTS[v];[0:a]atempo=0.6,atempo=0.55[a]" -map "[v]" -map "[a]" output3.mp4` -- slow down video and audio(`atempo=0.6,atempo=0.55` - the result of multiplication should be 0.33) 3 times
+- Useful links:
   - [(OFFICIAL DOCS) Speeding up/slowing down video](https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video)
     - `setpts` -- The filter works by changing the presentation timestamp (PTS) of each video frame. For example, if there are two succesive frames shown at timestamps 1 and 2, and you want to speed up the video, those timestamps need to become 0.5 and 1, respectively. Thus, we have to multiply them by 0.5.
     - The atempo filter is limited to using values between 0.5 and 2.0 (so it can slow it down to no less than half the original speed, and speed up to no more than double the input). If you need to, you can get around this limitation by stringing multiple atempo filters together. The following with quadruple the audio speed: `ffmpeg -i input.mkv -filter:a "atempo=2.0,atempo=2.0" -vn output.mkv`
   - [(2011) Change the frame rate of an MP4 video with ffmpeg](https://superuser.com/questions/320045/change-the-frame-rate-of-an-mp4-video-with-ffmpeg)
   - [(2017) Speed up video x1.5 but keep all frames](https://superuser.com/questions/1247462/speed-up-video-x1-5-but-keep-all-frames)
+
+### Cut part of video
+
+#### **Cut first 5 seconds**
+
+- `ffmpeg -ss 00:00:05 -i orig.mp4 orig_minus_5_sec.mp4` - discard first 5 seconds of the video (used to delete some ads in the beginning to syn subtitles)
+  - Interesting link: [What is difference between -ss and -itsoffset in ffmpeg?](https://superuser.com/questions/538031/what-is-difference-between-ss-and-itsoffset-in-ffmpeg)
+
+#### **Cut part of video from the middle**
+
+- `ffmpeg -i "input.mp4" -ss 00:10:00 -to 00:12:00 "output.mp4"`-- cut 2 minutes from the middle [see link](https://stackoverflow.com/questions/45004159/ffmpeg-ss-and-t-for-cutting-mp3)
 
 ### Useful links
 
@@ -165,14 +177,12 @@ Like approach with text files ([some more info here + notes how to concat all fi
 2. [How do I change frame size, preserving width (using ffmpeg)?](https://video.stackexchange.com/questions/9947/how-do-i-change-frame-size-preserving-width-using-ffmpeg)
 3. !!!!https://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time
 
-
 # Images
 
 ### Reduce size of images and delete metadata(EXIF) for all JPG in the current folder
 
 `for %A IN (*.jpg) DO ffmpeg -i "%A" "%A_new.jpg"`
-(if use ***.bat** file don't forget to use **%%** like) : `for %%A IN (*.jpg) DO ffmpeg -i "%%A" "_%%A"`
-
+(if use **\*.bat** file don't forget to use **%%** like) : `for %%A IN (*.jpg) DO ffmpeg -i "%%A" "_%%A"`
 
 ### Useful links
 
