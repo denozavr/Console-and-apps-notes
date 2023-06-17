@@ -84,6 +84,9 @@ According to link above we have several options (**option 2 seems to be the best
    `for %a in ("*.mov") do ffmpeg.exe -i "%a" -vcodec copy -acodec copy -scodec mov_text "%~na.mp4"` will convert all files in folder from **MOV** to **MP4** and keep all codecs and the initial name
 3. use `-qscale 0` OR `-qscale:v` for OLD codecs. It is ignored by libx264 and libx265 which use -crf instead.
 
+#### Extract subs from video
+- https://superuser.com/questions/583393/how-to-extract-subtitle-from-video-using-ffmpeg
+
 #### Extract images from video
 
 `ffmpeg -i video.mp4 -q:v 1 output/img_%05d.jpg`
