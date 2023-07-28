@@ -180,6 +180,13 @@ Like approach with text files ([some more info here + notes how to concat all fi
 2. [How do I change frame size, preserving width (using ffmpeg)?](https://video.stackexchange.com/questions/9947/how-do-i-change-frame-size-preserving-width-using-ffmpeg)
 3. !!!!https://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time
 
+# Audio
+
+### Convert `wav/flac` formats to `mp3`
+
+- `ffmpeg -i "mix_2020.wav" -vn -ar 44100 -ac 2 -b:a 320k output.mp3` - convert `wav` file to 320 kbps `mp3` (taken from [here](https://stackoverflow.com/questions/3255674/convert-audio-files-to-mp3-using-ffmpeg))
+
+
 # Images
 
 ### Reduce size of images and delete metadata(EXIF) for all JPG in the current folder
