@@ -138,7 +138,7 @@ Recreate our video based on exported images and sound, <mark style="background-c
 #### Concatenate/Merge videos
 
 **With text file(list.txt) approach there are NO any pauses between concatenated videos using instructions below**
-Like approach with text files ([some more info here + notes how to concat all files in folder](https://stackoverflow.com/a/41387530))
+1. Like approach with text files ([some more info here + notes how to concat all files in folder](https://stackoverflow.com/a/41387530))
 
 !!`creation_time` metadata works for **.mp4** files ([other type of files may need another metadata tag](https://stackoverflow.com/questions/40354172/change-avi-creation-date-with-ffmpeg))
 
@@ -151,6 +151,17 @@ Like approach with text files ([some more info here + notes how to concat all fi
   echo file file2.mp4 >> list.txt
   echo file file3.mp4 >> list.txt
   ```
+2. (Bash) [from here](https://stackoverflow.com/a/42104988/2771704) script to create file and merge files (joins all `mp4` files in folder into `joined-out.mp4` ) + good article about [Bash wildcards](https://linuxhint.com/bash_wildcard_tutorial/) (for 1 symbol use `?` like `0?.mp4` for files like `01.mp4`)
+
+    ```
+    [ -e list.txt ] && rm list.txt
+    for f in *.mp4
+    do
+      echo "file $f" >> list.txt
+    done
+
+    ffmpeg -f concat -i list.txt -c copy joined-out.mp4 && rm list.txt
+    ```
 
 #### Slow down the video
 
